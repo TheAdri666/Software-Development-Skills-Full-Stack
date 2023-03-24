@@ -87,13 +87,9 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/materialize-css/dist/css/materialize.css",
-              "node_modules/@mdi/font/css/materialdesignicons.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "./node_modules/materialize-css/dist/js/materialize.js"
-            ]
+            "scripts": []
           }
         }
       }

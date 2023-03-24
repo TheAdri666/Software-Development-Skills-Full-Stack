@@ -32,4 +32,8 @@ export class NavBarComponent {
   handleMenuClick(): void {
     this.isMenuOpen = !this.isMenuOpen;
   }
+  
+  get token(): string | null {
+    return localStorage.getItem('token');
+  }
 }

@@ -1,10 +1,9 @@
 <nav>
   <div class="nav-wrapper grey darken-3 col s12">
     <div class="brand-container col s3">
-      <img class="logo" src="../../../assets/images/logo.png" alt="Logo" />
-      <a routerLink="/" class="brand-name">Snack Underflow</a>
+      <img class="logo" src="assets/images/logo.png" alt="Logo" />
+      <a routerLink="/" class="brand-name"> Snack Underflow </a>
     </div>
-
     <form
       class="input-form hide-on-small-only"
       (ngSubmit)="handleSubmit($event)"
@@ -15,16 +14,15 @@
           type="search"
           placeholder="Search"
           [(ngModel)]="searchValue"
+          (ngModelChange)="searchValue = $event"
           (blur)="handleSearchBlur()"
-          name="q"
         />
-        <label class="label-icon" for="search"
-          ><i class="material-icons">search</i></label
-        >
+        <label class="label-icon" for="search">
+          <i class="material-icons">search</i>
+        </label>
         <button type="submit" class="hide">Search</button>
       </div>
     </form>
-
     <a
       href="#!"
       class="sidenav-trigger hide-on-med-and-up"
@@ -32,12 +30,11 @@
     >
       <i class="material-icons">menu</i>
     </a>
-
     <ul id="nav-mobile" [ngClass]="{ open: isMenuOpen, closed: !isMenuOpen }">
-      <li [ngClass]="{ active: isMenuOpen, closed: !isMenuOpen }">
+      <li [ngClass]="{ active: isMenuOpen }">
         <form
           class="input-form"
-          (ngSubmit)="handleSubmit($event); handleMenuClick()"
+          (ngSubmit)="handleMenuClick(); handleSubmit($event)"
         >
           <div class="input-field">
             <input
@@ -45,59 +42,50 @@
               type="search"
               placeholder="Search"
               [(ngModel)]="searchValue"
+              (ngModelChange)="searchValue = $event"
               (blur)="handleSearchBlur()"
-              name="q"
             />
-            <label class="label-icon" for="search"
-              ><i class="material-icons">search</i></label
-            >
+            <label class="label-icon" for="search">
+              <i class="material-icons">search</i>
+            </label>
             <button type="submit" class="hide">Search</button>
           </div>
         </form>
       </li>
-
-      <li
-        [ngClass]="{
-          active: isMenuOpen,
-          closed: !isMenuOpen,
-          wide: localStorage.getItem('token')
-        }"
-      >
-        <ng-container *ngIf="localStorage.getItem('token'); else loggedOut">
+      <ng-container *ngIf="token">
+        <li [ngClass]="{ active: isMenuOpen, wide: true }">
           <a href="/" class="wide" (click)="setLoggedOut()">Log Out</a>
-          <ng-template #loggedOut>
-            <div class="wide">
-              <a routerLink="/register" class="wide" (click)="handleMenuClick()"
-                >Register</a
-              >
-              <a routerLink="/login" class="wide" (click)="handleMenuClick()"
-                >Login</a
-              >
-            </div>
-          </ng-template>
-        </ng-container>
-      </li>
+        </li>
+        <li class="right hide-on-small-only col s2">
+          <a href="/">
+            <img
+              class="profile-picture"
+              src="assets/images/defaultProfilePic.png"
+              alt="Profile"
+            />
+          </a>
+        </li>
+      </ng-container>
+      <ng-container *ngIf="!token">
+        <li [ngClass]="{ active: isMenuOpen }">
+          <div class="wide">
+            <a routerLink="/register" class="wide" (click)="handleMenuClick()"
+              >Register</a
+            >
+            <a routerLink="/login" class="wide" (click)="handleMenuClick()"
+              >Login</a
+            >
+          </div>
+        </li>
+      </ng-container>
     </ul>
-
-    <ul
-      id="nav-mobile"
-      class="right hide-on-small-only col"
-      *ngIf="localStorage.getItem('token'); else loggedOut"
-    >
-      <li><a href="/" (click)="setLoggedOut()">Log Out</a></li>
+    <ul id="nav-mobile" class="right hide-on-small-only col" *ngIf="!token">
       <li>
-        <img
-          class="profile-picture"
-          src="../../../assets/images/defaultProfilePic.png"
-          alt="Profile"
-        />
+        <a routerLink="/register">Register</a>
+      </li>
+      <li>
+        <a routerLink="/login">Login</a>
       </li>
     </ul>
-    <ng-template #loggedOut>
-      <ul id="nav-mobile" class="right hide-on-small-only col">
-        <li><a routerLink="/register">Register</a></li>
-        <li><a routerLink="/login">Login</a></li>
-      </ul>
-    </ng-template>
   </div>
 </nav>
