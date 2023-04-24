@@ -31,7 +31,7 @@
       <i class="material-icons">menu</i>
     </a>
     <ul id="nav-mobile" [ngClass]="{ open: isMenuOpen, closed: !isMenuOpen }">
-      <li [ngClass]="{ active: isMenuOpen }">
+      <li [ngClass]="{ active: isMenuOpen }" class="hide-on-med-and-up">
         <form
           class="input-form"
           (ngSubmit)="handleMenuClick(); handleSubmit($event)"
@@ -62,18 +62,16 @@
           alt="Profile"
         />
       </li>
-      <ng-container *ngIf="!token">
-        <li [ngClass]="{ active: isMenuOpen }">
-          <div class="wide">
-            <a routerLink="/register" class="wide" (click)="handleMenuClick()"
-              >Register</a
-            >
-            <a routerLink="/login" class="wide" (click)="handleMenuClick()"
-              >Login</a
-            >
-          </div>
-        </li>
-      </ng-container>
+      <li [ngClass]="{ active: isMenuOpen }">
+        <div class="wide" *ngIf="!token">
+          <a routerLink="/register" class="wide" (click)="handleMenuClick()"
+            >Register</a
+          >
+          <a routerLink="/login" class="wide" (click)="handleMenuClick()"
+            >Login</a
+          >
+        </div>
+      </li>
     </ul>
     <ul id="nav-mobile" class="right hide-on-small-only col" *ngIf="!token">
       <li>
@@ -81,6 +79,18 @@
       </li>
       <li>
         <a routerLink="/login">Login</a>
+      </li>
+    </ul>
+    <ul class="right hide-on-small-only col" *ngIf="token">
+      <li [ngClass]="{ active: isMenuOpen, wide: true }">
+        <a href="/" class="wide" (click)="setLoggedOut()">Log Out</a>
+      </li>
+      <li class="right hide-on-small-only col s2 h50px">
+        <img
+          class="profile-picture"
+          src="assets/images/defaultProfilePic.png"
+          alt="Profile"
+        />
       </li>
     </ul>
   </div>
