@@ -33,7 +33,9 @@ When the screen gets small things start not to fit on the screen. Therefore most
 3. `npm run dev:server`: Runs the server application in development mode.
 4. `npm run dev:client`: Runs the client application in development mode.
 5. `npm run build`: Creates the optimized static build files for the client application so they can be served by the server application. Run this when changes are made to the client application.
-6. `npm run start`: Starts the server application in production mode. Because the client application should have been built beforehand it does not need to be run, as the files are static and do not change.
+6. `npm run start`: Starts the server application in production mode. Because the client application should have been built beforehand it does not need to be run, as the files are static and do not change.4
+7. `npm run dev:server-windows`: Does the same as #3 but on windows machines.
+8. `npm run start-windows`: Does the same as #6 but on windows machines
 
 ## Assumptions
 
@@ -47,6 +49,4 @@ As this is just an educational project the .env file is included in the reposito
 
 ## To my teacher(s)
 
-In this project I completely ran out of time because my laptop broke in the middle of developing it and I had to spend several days lagging behind. Despite this I think I could get 35 points for the project.
-
-25 as the base requirements state, 5 for using react, 2 for the search filter and 3 for the voting option. Thank you in advance for any feedback!
+In this project I completely ran out of time because my laptop broke in the middle of developing it and I had to spend several days lagging behind. Even with the extra time I had more responsibilities than I could handle and so the project is not finished the way I would like it to, however I will create a video for the react application showcasing how it is supposed to work.
