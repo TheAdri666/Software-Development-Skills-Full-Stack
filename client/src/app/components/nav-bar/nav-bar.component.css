@@ -8,6 +8,10 @@
   padding: 5px 10px;
 }
 
+.h50px {
+  height: 50px;
+}
+
 .logo {
   height: 100%;
   margin-right: 2.5px;
@@ -51,7 +55,7 @@
     justify-content: space-between !important;
   }
 
-  #nav-mobile {
+  #nav-mobile.open {
     display: flex;
     flex-direction: column;
   }

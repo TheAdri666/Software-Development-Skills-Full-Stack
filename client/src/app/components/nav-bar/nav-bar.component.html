@@ -52,20 +52,16 @@
           </div>
         </form>
       </li>
-      <ng-container *ngIf="token">
-        <li [ngClass]="{ active: isMenuOpen, wide: true }">
-          <a href="/" class="wide" (click)="setLoggedOut()">Log Out</a>
-        </li>
-        <li class="right hide-on-small-only col s2">
-          <a href="/">
-            <img
-              class="profile-picture"
-              src="assets/images/defaultProfilePic.png"
-              alt="Profile"
-            />
-          </a>
-        </li>
-      </ng-container>
+      <li [ngClass]="{ active: isMenuOpen, wide: true }">
+        <a href="/" class="wide" (click)="setLoggedOut()">Log Out</a>
+      </li>
+      <li class="right hide-on-small-only col s2 h50px">
+        <img
+          class="profile-picture"
+          src="assets/images/defaultProfilePic.png"
+          alt="Profile"
+        />
+      </li>
       <ng-container *ngIf="!token">
         <li [ngClass]="{ active: isMenuOpen }">
           <div class="wide">

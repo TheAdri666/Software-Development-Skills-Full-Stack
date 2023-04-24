@@ -12,6 +12,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SingleSnippetComponent } from './components/single-snippet/single-snippet.component';
 import { SnippetListComponent } from './components/snippet-list/snippet-list.component';
 import { CommentComponent } from './components/comment/comment.component';
+import { SnippetComponent } from './components/snippet/snippet.component';
 
 const routes: Routes = [
   { path: '', component: MainContentComponent },
@@ -31,14 +32,11 @@ const routes: Routes = [
     LoginComponent,
     SingleSnippetComponent,
     SnippetListComponent,
-    CommentComponent
+    CommentComponent,
+    SnippetComponent,
   ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routes),
-    FormsModule
-  ],
+  imports: [BrowserModule, RouterModule.forRoot(routes), FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

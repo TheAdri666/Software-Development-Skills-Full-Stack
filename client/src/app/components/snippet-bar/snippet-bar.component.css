@@ -1,0 +1,44 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.publish-form {
+  display: flex;
+  width: 60vw;
+  height: 70vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.materialize-textarea {
+  margin: 10px 0 !important;
+  color: #fff;
+}
+
+.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #7e57c2 !important;
+  box-shadow: 0 1px 0 0 #7e57c2 !important;
+}
+
+#snippet-title {
+  width: 30vw;
+}
+
+button {
+  max-width: fit-content;
+}
+
+.snippet-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  width: 100%;
+}
+
+.snippet-wrapper > button {
+  margin-top: 5vh;
+}

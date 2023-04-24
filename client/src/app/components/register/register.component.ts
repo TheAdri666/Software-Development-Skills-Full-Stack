@@ -4,7 +4,7 @@ import axios from 'axios';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
   email = '';
@@ -24,7 +24,7 @@ export class RegisterComponent {
       });
       window.location.href = '/login';
     } catch (error) {
-      this.errorMessage = 'Invalid credentials';
+      this.errorMessage = 'Something went wrong';
     }
   }
 }

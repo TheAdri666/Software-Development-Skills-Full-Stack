@@ -1,1 +1,5 @@
-<p>snippet-list works!</p>
+<div>
+  <div *ngFor="let snippet of snippets">
+    <app-snippet [snippet]="snippet"></app-snippet>
+  </div>
+</div>

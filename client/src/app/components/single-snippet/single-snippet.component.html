@@ -1,1 +1,10 @@
-<p>single-snippet works!</p>
+<div>
+  <app-snippet *ngIf="snippet" [snippet]="snippet"></app-snippet>
+  <div class="comments">
+    <app-comment
+      *ngFor="let comment of comments"
+      [author]="comment.author"
+      [content]="comment.content"
+    ></app-comment>
+  </div>
+</div>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router'
+import 'materialize-css/dist/js/materialize';
 
 @Component({
   selector: 'app-nav-bar',

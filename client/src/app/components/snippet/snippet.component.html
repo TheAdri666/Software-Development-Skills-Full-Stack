@@ -1,0 +1,41 @@
+<div class="snippet">
+  <h3>{{ snippet.title }}</h3>
+  <p>{{ snippet.content }}</p>
+  <p>By {{ email }}</p>
+  <p>{{ upvotes }} upvotes. {{ downvotes }} downvotes</p>
+  <button
+    class="btn deep-purple lighten-1 waves-effect waves-light"
+    (click)="handleUpvote()"
+  >
+    Upvote
+  </button>
+  <button
+    class="btn deep-purple lighten-1 waves-effect waves-light"
+    (click)="handleDownvote()"
+  >
+    Downvote
+  </button>
+  <ul>
+    <li *ngFor="let comment of snippet.comments">{{ comment.text }}</li>
+  </ul>
+  <form (ngSubmit)="handleComment($event)">
+    <input
+      type="text"
+      placeholder="Add a comment"
+      [(ngModel)]="comment"
+      name="comment"
+    />
+    <button
+      class="btn deep-purple lighten-1 waves-effect waves-light"
+      type="submit"
+    >
+      Comment
+    </button>
+  </form>
+  <a
+    *ngIf="!locationIncludesSnippetId"
+    [routerLink]="['/snippets/id']"
+    [queryParams]="{ q: snippet._id }"
+    >View</a
+  >
+</div>
